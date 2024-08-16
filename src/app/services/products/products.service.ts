@@ -76,8 +76,11 @@ export class ProductsService {
     }
   }
 
-  // products.service.ts
-
+  sortProductsByRating(): Observable<ProductItem[]> {
+    return this.httpClient
+      .get<Products>(`${environment.ProductsSortApi}?sortBy=rating&order=desc`)
+      .pipe(map((response) => response.products));
+  }
   getCategoryProductCount(category: string): Observable<number> {
     return this.httpClient
       .get<Products>(`${environment.ProductsByCategoryApi}${category}`)
@@ -86,6 +89,9 @@ export class ProductsService {
 
   getAllProducts(): BehaviorSubject<ProductItem[]> {
     return this.products;
+  }
+  getAllsProductSort(): Observable<Products> {
+    return this.httpClient.get<Products>(`${environment.ProductsSortApi}`);
   }
   getAllsProducts(): Observable<Products> {
     return this.httpClient.get<Products>(`${environment.ProductsApi}`);

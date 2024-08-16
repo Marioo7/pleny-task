@@ -1,4 +1,6 @@
 <section class="home__container">
+  <!-- Other HTML code -->
+
   <p class="home__category">{{ category }}</p>
   <p class="home__breadcrumb">
     Home / Products / <b>{{ category }}</b>
@@ -6,9 +8,20 @@
   <div class="home__main">
     <app-categories></app-categories>
     <div class="left-side">
-      <div *ngIf="cart.products.length > 0" class="title-product">
-        <div class="cart__container">
-          <p>({{ cart.products.length }}) Products Found</p>
+      <div class="nav-cart">
+        <div *ngIf="cart.products.length > 0" class="title-product">
+          <div class="cart__container">
+            <p>({{ cart.products.length }}) Products Found</p>
+          </div>
+        </div>
+        <div>
+          <p
+            *ngIf="cart.products.length > 0"
+            class="cart__sort"
+            (click)="sortAllProductsByRating()"
+          >
+            <b>Sort By:</b> Popularity
+          </p>
         </div>
       </div>
 

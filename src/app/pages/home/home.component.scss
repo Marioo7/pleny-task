@@ -58,6 +58,18 @@
   height: 17px;
   margin:  0px 24px 24px;
 }
+.cart__sort{
+  color: #1E1E1E;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400px;
+  width: 128px;
+  height: 17px;
+}
+.nav-cart{
+  display: flex;
+  justify-content: space-between;
+}
 .cart__container ul{
   list-style-type: none;
 }

@@ -3,6 +3,7 @@ export const environment = {
   AuthApi: 'https://dummyjson.com/auth/login',
   AllCategories: 'https://dummyjson.com/products/categories',
   ProductsApi: 'https://dummyjson.com/products?limit=9',
+  ProductsSortApi: 'https://dummyjson.com/products',
   ProductsByCategoryApi: 'https://dummyjson.com/products/category/',
   ProductsBySearchApi: 'https://dummyjson.com/products/search?q=',
 };

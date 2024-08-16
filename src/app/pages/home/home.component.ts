@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Cart, CartService } from 'src/app/services/cart/cart.service';
 import {
@@ -18,9 +19,11 @@ export class HomeComponent implements OnInit {
   page: number = 1;
   total: number = 100;
   cart: Cart = { products: [] };
+
   constructor(
     private products: ProductsService,
-    private cartServ: CartService
+    private cartServ: CartService,
+    private http: HttpClient
   ) {}
 
   ngOnInit(): void {
@@ -56,5 +59,13 @@ export class HomeComponent implements OnInit {
   scrollBackToTop(): void {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
+  }
+
+  sortAllProductsByRating() {
+    this.products.sortProductsByRating().subscribe((sortedProducts) => {
+      this.allProducts = sortedProducts;
+      this.productsByCategory = sortedProducts;
+      this.productsBySearch = sortedProducts;
+    });
   }
 }
