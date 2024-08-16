@@ -1,0 +1,13 @@
+<div class="categories__container">
+  <p class="categories__header">Products</p>
+  <div class="categories__list_item" *ngFor="let cat of categories">
+    <input
+      type="radio"
+      [id]="cat.id"
+      value="{{ cat.id }}"
+      [checked]="cat.selected"
+      (change)="selectCategory(cat)"
+    />
+    <label for="{{ cat.id }}">{{ cat.title }} ({{ cat.count }})</label>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+.home__container{
+    padding-top: 114px;
+    width: 85%;
+    margin: auto;
+}
+.home__category{
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  line-height: 38.73px;
+  font-weight: 700;
+  margin-bottom: 51px;
+}
+.home__breadcrumb{
+  font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 21.78px;
+    font-weight: 400;
+    margin-bottom: 51px;
+}
+.home__main{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.home__main .left-side{
+    width: 75%;
+}
+.title-product{
+  color: #1E1E1E;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400px;
+  width: 128px;
+  height: 17px;
+  margin:  0px 24px 24px;
+}
+.home__main .left-side .products{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+.home__main .left-side .paginator{
+    text-align: center;
+    margin: 25px 0px;
+}
+
+.home__main .left-side .paginator ::ng-deep .ngx-pagination .current {
+    background: #56D9D9;
+}
+.title-product{
+  color: #1E1E1E;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 400px;
+  width: 128px;
+  height: 17px;
+  margin:  0px 24px 24px;
+}
+.cart__container ul{
+  list-style-type: none;
+}

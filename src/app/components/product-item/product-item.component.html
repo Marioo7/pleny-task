@@ -1,0 +1,34 @@
+<div class="cart">
+  <div class="cart__img">
+    <img [src]="product.images[0]" alt="product image" />
+  </div>
+  <div class="cart__discount">
+    <p>- {{ product.discountPercentage }}%</p>
+  </div>
+  <div class="cart__body">
+    <h3 class="title">{{ product.title }}</h3>
+    <p class="description">{{ product.description }}</p>
+    <div class="price">
+      <p class="before">
+        <b>{{ product.price }}</b> USD
+      </p>
+      <p>
+        <b>{{ getPriceAfterDis() }}</b> USD
+      </p>
+    </div>
+    <p>
+      Brand: <b>{{ product.brand }}</b>
+    </p>
+    <p>
+      Category:<b>{{ product.category }}</b>
+    </p>
+    <p>
+      In stock:<b>{{ product.stock }}</b>
+    </p>
+    <div class="rating">
+      <i class="fa-solid fa-star"></i>
+      {{ product.rating }}
+    </div>
+    <button class="cart__button" (click)="addToCart()">ADD TO CART</button>
+  </div>
+</div>

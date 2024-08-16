@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100vh;
+}
+
+.logo__container{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.logo {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(180deg, #FFFFFF 0%, #D0D5DD 100%), #FFFFFF;
+    border-radius: 8px;
+}
+.logo .dot{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 25%;
+    left: 25%;
+    background: linear-gradient(26.57deg, #56D9D9 8.33%, #56D9D9 91.67%);
+    border-radius: 50%;
+}

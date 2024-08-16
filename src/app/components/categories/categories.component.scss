@@ -1,0 +1,31 @@
+.categories__container {
+  font-family: 'Inter', sans-serif;
+    width: 282px;
+    height: 600px;
+    border: 0.5px solid #424242;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 0 16px 12px;
+    justify-content: space-between;
+}
+.categories__header{
+  font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.categories__list_item{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 16px;
+    line-height: 21.79px;
+    font-weight: 400;
+}
+.categories__list_item label{
+    cursor: pointer;
+}
+label{
+  font-family: 'Inter', sans-serif;
+}

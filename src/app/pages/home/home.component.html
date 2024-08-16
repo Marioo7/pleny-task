@@ -1,0 +1,62 @@
+<section class="home__container">
+  <p class="home__category">{{ category }}</p>
+  <p class="home__breadcrumb">
+    Home / Products / <b>{{ category }}</b>
+  </p>
+  <div class="home__main">
+    <app-categories></app-categories>
+    <div class="left-side">
+      <div *ngIf="cart.products.length > 0" class="title-product">
+        <div class="cart__container">
+          <p>({{ cart.products.length }}) Products Found</p>
+        </div>
+      </div>
+
+      <ng-container *ngIf="productsBySearch.length > 0">
+        <div class="products">
+          <app-product-item
+            *ngFor="let product of productsBySearch"
+            [product]="product"
+          ></app-product-item>
+        </div>
+      </ng-container>
+      <ng-container
+        *ngIf="productsByCategory.length > 0 && productsBySearch.length === 0"
+      >
+        <div class="products">
+          <app-product-item
+            *ngFor="let product of productsByCategory"
+            [product]="product"
+          ></app-product-item>
+        </div>
+      </ng-container>
+      <ng-container
+        *ngIf="productsByCategory.length === 0 && productsBySearch.length === 0"
+      >
+        <div class="products">
+          <app-product-item
+            *ngFor="
+              let product of allProducts
+                | paginate
+                  : {
+                      id: 'server',
+                      itemsPerPage: 9,
+                      currentPage: page,
+                      totalItems: total
+                    }
+            "
+            [product]="product"
+          ></app-product-item>
+        </div>
+        <div class="paginator">
+          <pagination-controls
+            previousLabel=""
+            nextLabel=""
+            (pageChange)="changePage($event)"
+            id="server"
+          ></pagination-controls>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>

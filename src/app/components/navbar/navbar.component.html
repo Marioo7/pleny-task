@@ -1,0 +1,43 @@
+<header class="header__container">
+  <nav class="header__nav">
+    <div class="nav__links">
+      <app-logo></app-logo>
+      <div style="padding-left: 60px">
+        <a routerLinkActive="active" routerLink="home">Home</a>
+      </div>
+    </div>
+    <div class="nav__links">
+      <div [hidden]="!isLogged">
+        <input
+          type="text"
+          placeholder="Search"
+          [(ngModel)]="keyword"
+          (input)="search()"
+        />
+      </div>
+
+      <div>
+        <a>
+          <div style="position: relative" [hidden]="!isLogged">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <div class="badge">
+              {{ cart.products.length }}
+            </div>
+          </div>
+        </a>
+      </div>
+      <div>
+        <a [hidden]="!isLogged">Account </a>&nbsp; &nbsp;<a
+          [hidden]="!isLogged"
+          routerLink="login"
+          ><i class="fa-solid fa-arrow-left"></i>
+        </a>
+      </div>
+      <div>
+        <a [hidden]="isLogged" routerLinkActive="active" routerLink="login"
+          >Log in</a
+        >
+      </div>
+    </div>
+  </nav>
+</header>

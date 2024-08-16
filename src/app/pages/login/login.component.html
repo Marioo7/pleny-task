@@ -1,0 +1,51 @@
+<section class="container">
+  <div class="content">
+    <div class="logo__container">
+      <div class="logo">
+        <div class="dot"></div>
+      </div>
+    </div>
+    <p class="title">Log in to your account</p>
+    <p class="subtitle">Welcome back! Please enter your details.</p>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <label for="userName">Email</label>
+      <input
+        type="text"
+        id="userName"
+        placeholder="Enter your email"
+        required
+        formControlName="userName"
+      />
+      <div
+        class="error"
+        *ngIf="
+          formControlles['userName'].invalid &&
+          (formControlles['userName'].dirty ||
+            formControlles['userName'].touched)
+        "
+      >
+        {{ getUserNameErrorMessage() }}
+      </div>
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        placeholder="Enter your password"
+        required
+        formControlName="password"
+      />
+      <div
+        class="error"
+        *ngIf="
+          formControlles['password'].invalid &&
+          (formControlles['password'].dirty ||
+            formControlles['password'].touched)
+        "
+      >
+        {{ getPasswordErrorMessage() }}
+      </div>
+
+      <button type="submit" [disabled]="loginForm.invalid">Sign in</button>
+    </form>
+  </div>
+</section>
